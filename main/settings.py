@@ -46,7 +46,7 @@ SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # [nullvuild] edit debug mode
-DEBUG = False
+DEBUG = True
 
 # [nullvuild] edit allowed hosts
 ALLOWED_HOSTS = [
@@ -63,8 +63,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # [nullvuild] add main
+    # [nullvuild] add app
     'main',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],     # [nullvuild] edit template dir
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
