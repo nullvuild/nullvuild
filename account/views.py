@@ -4,6 +4,6 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    template = loader.get_template('blog_index.html')
+    template = loader.get_template('account_index.html')
     context = {}
     return HttpResponse(template.render(context, request))
