@@ -12,3 +12,9 @@
         </ul>
     </div>
 </nav>
+
+{% if custom_user %}
+    <p>Welcome, {{ custom_user.name }}!</p>
+{% else %}
+    <p>You are not logged in.</p>
+{% endif %}

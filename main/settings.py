@@ -92,6 +92,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+                # [nullvuild][COMMON-0001] 여기에 추가하고, setting.py에 추가하면 이 함수는 계속 실행됨
+                # App Name . Py File Name . Function Name
+                'main.commom.custom_user_context',
+                
             ],
         },
     },
