@@ -24,7 +24,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     
     #[nullvuild] add appname
-    path('account/', include('account.urls', namespace='account')),
     path('user/', include('user.urls', namespace='user')),
     path('blog/', include('blog.urls')),
 ]

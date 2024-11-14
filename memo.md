@@ -15,6 +15,11 @@ python manage.py makemigrations **앱이름
 2. 마이그레이션 파일 생성 (make migrations)
 python manage.py migrate
 
+# DB 내 슈퍼계정 만들기
+python manage.py createsuperuser
+
+# DB 테이블 변경
+일단.. db.qlite3를 삭제하고 다시하는 게 가장 빠름
 
 
 # Rule

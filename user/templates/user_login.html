@@ -12,8 +12,8 @@
 <form method="post" action="/user/login/">
   {% csrf_token %}
   {% include 'user_login_error.html' %} <!-- 코드 추가 -->
-  username : <input type='text' name='username'><br/>
-  password : <input type='password' name='password'><br/>
+  username : <input type='text' name='user_name'><br/>
+  password : <input type='password' name='user_pwd'><br/>
   <button class="btn btn-primary btn-block" id="lgoin">login</button>
 </form>
 

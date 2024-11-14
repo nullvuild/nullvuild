@@ -22,13 +22,13 @@ def index(request):
 def signup(request):
   #1. submit signup
   if request.method == 'POST': # 회원정보 저장    singup
-    userid = request.POST.get('userid')
-    name = request.POST.get('name')
-    pwd = request.POST.get('pwd')
-    introduction = request.POST.get('introduction')
+    user_handle = request.POST.get('user_handle')
+    user_name = request.POST.get('user_name')
+    user_pwd = request.POST.get('user_pwd')
+    user_intro = request.POST.get('user_intro')
     
-    pwd = make_password(pwd)
-    user = User(userid=userid, name=name, pwd=pwd, introduction=introduction)
+    user_pwd = make_password(user_pwd)
+    user = User(user_handle=user_handle, user_name=user_name, user_pwd=user_pwd, user_intro=user_intro)
     user.save()
     return redirect('index')
   else:
@@ -46,16 +46,16 @@ https://infinitt.tistory.com/221
 def login(request):
     response_data = {}
     if request.method == "POST":
-        in_username = request.POST.get('username', None)
-        in_pwd = request.POST.get('password', None)
+        in_username = request.POST.get('user_name', None)
+        in_pwd = request.POST.get('user_pwd', None)
 
 
         if not (in_username and in_pwd):
             response_data['error']="아이디와 비밀번호를 모두 입력해주세요."
         else : 
-            myuser = User.objects.get(userid=in_username) 
+            myuser = User.objects.get(user_handle=in_username) 
             #db에서 꺼내는 명령. Post로 받아온 username으로 , db의 username을 꺼내온다.
-            if check_password(in_pwd, myuser.pwd):
+            if check_password(in_pwd, myuser.user_pwd):
                 request.session['user'] = myuser.id
                 #세션도 딕셔너리 변수 사용과 똑같이 사용하면 된다.
                 #세션 user라는 key에 방금 로그인한 id를 저장한것.
@@ -73,7 +73,7 @@ def logout(request):
     auth.logout(request)
     # 로그아웃 후 리다이렉트할 페이지
     return redirect('/')
-    
+
 
 '''
 def login(request):
@@ -82,7 +82,7 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         
-        user  = auth.authenticate(request, userid=username, pwd=password)
+        user  = auth.authenticate(request, user_handle=username, user_pwd=password)
         
         if user is not None :
           auth.login(request, user)

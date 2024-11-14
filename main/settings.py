@@ -65,7 +65,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # [nullvuild] add app
     'main',
-    'account',
     'blog',
     'user',
 ]
