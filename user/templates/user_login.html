@@ -1,0 +1,20 @@
+<!-- users>login.html -->
+
+
+{% block content %}
+
+{% if error %}
+    <div class="error-message">{{ error }}</div>
+{% endif %}
+
+<h1>로그인</h1>
+<!-- <form method="post" action="{% url 'user:login' %}"> -->
+<form method="post" action="/user/login/">
+  {% csrf_token %}
+  {% include 'user_login_error.html' %} <!-- 코드 추가 -->
+  username : <input type='text' name='username'><br/>
+  password : <input type='password' name='password'><br/>
+  <button class="btn btn-primary btn-block" id="lgoin">login</button>
+</form>
+
+{% endblock %}

@@ -4,12 +4,19 @@
 
 
 # Django 서버 시작
-1. python manage.py runserver
+1. 서버 시작
+python manage.py runserver
 
 
 # DE 변경
 1. 장고 ORM을 사용하여 DB 테이블 만들기
-python manage.py makemigrations 
+python manage.py makemigrations **앱이름
 
 2. 마이그레이션 파일 생성 (make migrations)
 python manage.py migrate
+
+
+
+# Rule
+[NV-00001] 여기에 추가하고, setting.py에 추가하면 이 함수는 계속 실행됨
+[NV-00002] 이 경로를 만들어주면 각 앱에서 teamplate 하위 경로로 찾아감

@@ -18,7 +18,7 @@ from django.core.exceptions import ImproperlyConfigured
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# [nullvuild] add template
+# [nullvuild][NV-00002] 이 경로를 만들어주면 각 앱에서 teamplate 하위 경로로 찾아감
 TEMPLATE_DIR = os.path.join(BASE_DIR, '../templates/')
 
 # Quick-start development settings - unsuitable for production
@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'main',
     'account',
     'blog',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 
-                # [nullvuild][COMMON-0001] 여기에 추가하고, setting.py에 추가하면 이 함수는 계속 실행됨
+                # [nullvuild][NV-00001] 여기에 추가하고, setting.py에 추가하면 이 함수는 계속 실행됨
                 # App Name . Py File Name . Function Name
                 'main.commom.custom_user_context',
                 
